@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <style>
+        body{
+            background: violet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1::after{
+            border-left: 2px solid #fff;
+            position:relative;
+            left: 10px;
+            content: '';
+            animation: blink 0.6s infinite;
+        }
+        @keyframes blink {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+    </style> -->
+
+<style>
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(18, 156, 71, 0.76);
+    width:100%;
+    height: 100vh;
+    position: relative;
+}
+.container .card{
+    padding: 30px 40px;
+    background: #fff;
+    text-align: center;
+    width:500px;
+    min-width:500px;
+    height:40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container .card{
+    box-shadow: 5px 7px 12px rgba(0, 0, 0, 0.5);
+    border-radius:7px;
+    /* display: none; */
+}
+.container .card h3{
+    color:rgba(11, 148, 148, 0.698);
+    padding: 20px 0;
+
+}
+.container .card input{
+    padding:8px 13px;
+    border:1px solid rgba(4, 28, 107, 0.102);
+    border-radius: 4px;
+    margin: 10px 0;
+}
+.container .card button{
+    padding: 10px 24px;
+    font-size: 15px;
+    border: none;
+    background:rgba(11, 148, 148, 0.698) ;
+    color: #fff;
+    margin: 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container .balance{
+    padding: 20px 80px;
+    display: none;
+}
+.container .balance .real-balance{
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(75, 3, 143, 0.692);
+    color: #fff;
+    height: 20vh;
+    position: absolute;
+    top:10%;
+    left:40%;
+}
+.container .balance .deposit{
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(75, 3, 143, 0.692);
+    color: #fff;
+    height: 20vh;
+    position: absolute;
+    top:50%;
+    left: 10%;
+}
+.container .balance .withdraw{
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(75, 3, 143, 0.692);
+    color: #fff;
+    height: 20vh;
+    position: absolute;
+    top:50%;
+    right: 10%;
+}
+.container .balance input{
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+.container .balance .btn{
+    border: none;
+    padding: 15px 30px;
+    color: #fff;
+    margin: 10px;
+    background: rgba(14, 1, 3, 0.472);
+    border-radius: 5px;
+}
+</style>
+
+
+
+
+</head>
+<body>
+    <!-- <h1>I Am A Full Stack <span>Developer</span></h1>
+
+    <script>
+
+        let h1=document.querySelector('span');
+        console.log(h1)
+        let text='Developer';
+        let index=0;
+
+        const typ=()=>{
+            h1.innerHTML=text.slice(0,index++);
+            console.log(h1)
+            if(index>text.length){
+                index=0;
+            }
+        }
+        setInterval(typ,300)
+    </script> -->
+
+
+<!-- <div class="container">
+    <div class="card">
+        <h3>Islamaia Bank</h3>
+        <input type="text" placeholder="Enter your account number" id="account">
+        <input type="text" placeholder="Enter your password" id="password">
+        <button>Submit</button>
+    </div>
+    <div class="balance">
+        <div class="real-balance">
+            <h3>Your Balance Is <span id="total">2000</span></h3>
+        </div>
+        <div class="deposit">
+            <h3>Deposit <span id='sub-total'>00</span></h3>
+            <input type="text" placeholder="Deposit money" id="deposit">
+            <button class="btn" id="add">Add</button>
+        </div>
+        <div class="withdraw">
+            <h3>Withdraw <span id="draw">00</span></h3>
+            <input type="text" placeholder="Withdraw money" id="withdraw">
+            <button class="btn" id="wdraw">Withdraw</button>
+        </div>
+    </div>
+</div> -->
+
+
+
+<h1>JavaScript Arrays</h1>
+<h2>The every() Method</h2>
+
+<p>every() returns true if all elements in an array pass a test (provided as a function).</p>
+
+<p id="demo"></p>
+
+<script>
+const ages = [32, 33, 19, 40];
+let myAge=ages.every(checkAge);
+
+function checkAge(age) {
+  if (age===true){
+ 
+ 	document.getElementById("demo").innerHTML='you can go';
+  
+  
+  
+  
+}
+}
+</script>
+
+
+
+
+
+
+
+
+<!-- <script>
+
+const account=document.querySelector('#account').value;
+const password=document.querySelector('#password').value;
+const button=document.querySelector('button');
+const wdraw=document.querySelector('#wdraw');
+const add=document.querySelector('#add');
+
+// add balance section
+
+const addMoney=()=>{
+
+    const deposit=document.querySelector('#deposit').value;
+    const newDeposit=parseFloat(deposit)
+
+    
+    
+    let subTotal=document.querySelector('#sub-total').innerHTML;
+    const newSubtotal=parseFloat(subTotal);
+    const totalNumber=newDeposit+newSubtotal;
+
+
+    console.log(deposit)
+    document.querySelector('#sub-total').innerHTML=totalNumber
+    const total=document.querySelector('#total').innerHTML;
+    let newTotal=parseFloat(total);
+    // let multiplacation=newTotal+newSubtotal;
+    let multi=newTotal+totalNumber
+    document.querySelector('#total').innerHTML=multi;
+    
+}
+
+const subMoney=()=>{
+
+    const total=document.querySelector('#total').innerHTML;
+    const withdraw=document.querySelector('#withdraw').value;
+    const newWithdraw=parseFloat(withdraw);
+    const draw=document.querySelector('#draw').innerHTML;
+    const nWith=parseFloat(draw)
+    const myWith=newWithdraw + nWith;
+    console.log(myWith)
+    document.querySelector('#draw').innerHTML=myWith;
+    const newmyWith=document.querySelector('#total').innerHTML=total-myWith
+
+    // if(document.querySelector('#total').innerHTML == '0'){
+    //     alert('you have no more balance')
+    // }
+
+    switch(document.querySelector('#total').innerHTML<=0){
+
+        case 0:
+        alert('You dont have total balance');
+        break;
+
+        default:'code is not working';
+
+    }
+
+
+
+}
+
+
+wdraw.addEventListener('click',subMoney)
+add.addEventListener('click',addMoney);
+
+
+
+
+
+const check=()=>{
+    const account=document.querySelector('#account').value;
+    const password=document.querySelector('#password').value;
+    const card=document.querySelector('.card')
+    const balance=document.querySelector('.balance');
+
+    card.style.display='none';
+    console.log(password)
+
+    if((account.length) < 6){
+        alert('account is required')
+
+    }else if(password.length < 6){
+        alert('password is required')
+    }else if((account.length) && (password.length) > 6){
+        card.style.display='none';
+        balance.style.display='block';
+    }
+    else{
+        console.log('please enter valid password')
+    }
+
+
+
+}
+
+
+
+button.addEventListener('click',check)
+
+</script> -->
+
+</body>
+</html>
